@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GymDesk — Plataforma de Gestão de Reservas
+        e Horários para Ginásios</title>
+    <link rel="icon" type="image/png" href="assets/img/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <!-- CURSOR GLOW -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="./assets/img/logo.png" alt="GymDesk Logo" class="navbar-logo">
+                <span>GymDesk</span>
+            </a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto align-items-center gap-1">
+                    <li class="nav-item"><a class="nav-link" href="#funcionalidades">Funcionalidades</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#como-funciona">Como Funciona</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#tecnologias">Tecnologias</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#arquitetura">Arquitetura</a></li>
+                    <li class="nav-item ms-2">
+                        <a class="btn btn-primary-outline" href="#screens">Ver Demo</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+        <div class="hero-bg-grid"></div>
+        <div class="hero-orb hero-orb-1"></div>
+        <div class="hero-orb hero-orb-2"></div>
+        <div class="hero-orb hero-orb-3"></div>
+
+        <div class="container position-relative">
+            <div class="row align-items-center min-vh-100 py-5">
+                <div class="col-lg-6 hero-content">
+                    <div class="hero-badge animate-fade-up">
+                        <span class="badge-dot"></span>
+                        Projeto JavaEE · UFCD 5409 · IEFP 2026
+                    </div>
+                    <h1 class="hero-title animate-fade-up delay-1">
+                        Gestão Inteligente<br>
+                        <span class="text-gradient">de Reservas</span><br>
+                        para Ginásios
+                    </h1>
+                    <p class="hero-desc animate-fade-up delay-2">
+                        Plataforma centralizada para reservas, aulas, horários, clientes e colaboradores — tudo num só
+                        sistema, simples e eficiente.
+                    </p>
+                    <div class="hero-tags animate-fade-up delay-3">
+                        <span class="tech-tag">JavaEE</span>
+                        <span class="tech-tag">JSP</span>
+                        <span class="tech-tag">Bootstrap</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">Tomcat</span>
+                    </div>
+                    <div class="hero-actions animate-fade-up delay-4">
+                        <a href="#screens" class="btn-hero-primary">
+                            <i class="bi bi-play-circle-fill me-2"></i>Explorar Projeto
+                        </a>
+                        <a href="#como-funciona" class="btn-hero-secondary">
+                            Como Funciona <i class="bi bi-arrow-right ms-1"></i>
+                        </a>
+                    </div>
+                    <div class="hero-stats animate-fade-up delay-5">
+                        <div class="stat-item">
+                            <span class="stat-num">8</span>
+                            <span class="stat-label">Req. Funcionais</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-num">5</span>
+                            <span class="stat-label">Entidades BD</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-num">3</span>
+                            <span class="stat-label">Perfis de Acesso</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 hero-visual animate-fade-left delay-2">
+                    <div class="dashboard-mockup">
+                        <div class="mockup-bar">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                            <span class="mockup-title">GymDesk · Dashboard</span>
+                        </div>
+                        <img src="assets/img/dashboard.png" alt="Dashboard GymDesk" class="mockup-img">
+                        <div class="mockup-float mockup-float-1">
+                            <i class="bi bi-calendar-check-fill"></i>
+                            <span>28 Reservas Hoje</span>
+                        </div>
+                        <div class="mockup-float mockup-float-2">
+                            <i class="bi bi-people-fill"></i>
+                            <span>156 Clientes Ativos</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-hint">
+            <div class="scroll-line"></div>
+            <span>Scroll</span>
+        </div>
+    </section>
+
+    <!-- PROBLEMA / PORQUÊ -->
+    <section class="section-why reveal">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-5">
+                    <p class="section-eyebrow">O Problema</p>
+                    <h2 class="section-title">Porque é que os ginásios precisam disto?</h2>
+                    <p class="section-body">A gestão manual de reservas gera conflitos, perde informação e desperdiça
+                        tempo. O GymDesk centraliza tudo numa única plataforma segura e acessível.</p>
+                </div>
+                <div class="col-lg-7">
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <div class="why-card">
+                                <div class="why-icon"><i class="bi bi-diagram-3-fill"></i></div>
+                                <h5>Gestão Centralizada</h5>
+                                <p>Reservas, clientes, horários e colaboradores num único sistema.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="why-card">
+                                <div class="why-icon"><i class="bi bi-shield-fill-check"></i></div>
+                                <h5>Acesso Seguro</h5>
+                                <p>Autenticação com perfis distintos: Administrador, Receção e Instrutor.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="why-card">
+                                <div class="why-icon"><i class="bi bi-calendar-week-fill"></i></div>
+                                <h5>Sem Conflitos</h5>
+                                <p>Validação automática de sobreposições de horários e reservas.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="why-card">
+                                <div class="why-icon"><i class="bi bi-bar-chart-fill"></i></div>
+                                <h5>Relatórios</h5>
+                                <p>Análise de atividade do ginásio com histórico completo.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FUNCIONALIDADES -->
+    <section id="funcionalidades" class="section-features reveal">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-eyebrow">Funcionalidades</p>
+                <h2 class="section-title">Tudo o que um ginásio moderno precisa</h2>
+                <p class="section-subtitle">Desenvolvido com foco na usabilidade e eficiência operacional.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feat-card feat-card-large">
+                    <div class="feat-icon"><i class="bi bi-calendar-check-fill"></i></div>
+                    <h4>Gestão de Reservas</h4>
+                    <p>Criação, edição e cancelamento de reservas com validação de conflitos em tempo real. Histórico
+                        completo por cliente.</p>
+                    <div class="feat-tags">
+                        <span>CRUD Completo</span>
+                        <span>Validação</span>
+                    </div>
+                </div>
+                <div class="feat-card">
+                    <div class="feat-icon"><i class="bi bi-calendar-week-fill"></i></div>
+                    <h4>Calendário Visual</h4>
+                    <p>Vista semanal e mensal dos horários com atualização automática.</p>
+                </div>
+                <div class="feat-card">
+                    <div class="feat-icon"><i class="bi bi-people-fill"></i></div>
+                    <h4>Clientes</h4>
+                    <p>Registo e gestão centralizada de todos os clientes do ginásio.</p>
+                </div>
+                <div class="feat-card">
+                    <div class="feat-icon"><i class="bi bi-person-workspace"></i></div>
+                    <h4>Funcionários</h4>
+                    <p>Controlo operacional e calendário de trabalho por instrutor.</p>
+                </div>
+                <div class="feat-card feat-card-large feat-card-alt">
+                    <div class="feat-icon"><i class="bi bi-shield-lock-fill"></i></div>
+                    <h4>Autenticação & Permissões</h4>
+                    <p>Sistema de login seguro com três perfis de acesso distintos — Administrador com controlo total,
+                        Receção para gestão de reservas e clientes, e Instrutor para consulta de horários.</p>
+                    <div class="feat-tags">
+                        <span>Administrador</span>
+                        <span>Receção</span>
+                        <span>Instrutor</span>
+                    </div>
+                </div>
+                <div class="feat-card">
+                    <div class="feat-icon"><i class="bi bi-bar-chart-line-fill"></i></div>
+                    <h4>Relatórios</h4>
+                    <p>Dashboard com métricas e análise de atividade do ginásio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMO FUNCIONA -->
+    <section id="como-funciona" class="section-how reveal">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-eyebrow">Fluxo de Uso</p>
+                <h2 class="section-title">Como funciona o sistema</h2>
+                <p class="section-subtitle">Da autenticação à reserva confirmada em segundos.</p>
+            </div>
+            <div class="steps-container">
+                <div class="step-line"></div>
+                <div class="row g-4">
+                    <div class="col-md-3">
+                        <div class="step-card">
+                            <div class="step-num">01</div>
+                            <div class="step-icon"><i class="bi bi-box-arrow-in-right"></i></div>
+                            <h5>Login</h5>
+                            <p>O funcionário autentica-se com as suas credenciais. O sistema valida e redireciona
+                                conforme o perfil.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="step-card">
+                            <div class="step-num">02</div>
+                            <div class="step-icon"><i class="bi bi-speedometer2"></i></div>
+                            <h5>Dashboard</h5>
+                            <p>Visão geral do ginásio: reservas do dia, clientes ativos, aulas e funcionários
+                                disponíveis.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="step-card">
+                            <div class="step-num">03</div>
+                            <div class="step-icon"><i class="bi bi-plus-circle-fill"></i></div>
+                            <h5>Nova Reserva</h5>
+                            <p>A receção seleciona cliente, aula, data e hora. O sistema valida conflitos
+                                automaticamente.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="step-card">
+                            <div class="step-num">04</div>
+                            <div class="step-icon"><i class="bi bi-calendar2-check-fill"></i></div>
+                            <h5>Confirmado</h5>
+                            <p>Reserva registada e o calendário é atualizado automaticamente para todos os utilizadores.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCREENSHOTS -->
+    <section id="screens" class="section-screens reveal">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-eyebrow">Interface</p>
+                <h2 class="section-title">Veja o sistema em ação</h2>
+            </div>
+            <div class="screen-tabs">
+                <button class="screen-tab active" data-target="tab-dashboard">Dashboard</button>
+                <button class="screen-tab" data-target="tab-wireframe">Wireframes</button>
+            </div>
+            <div class="screen-panel active" id="tab-dashboard">
+                <div class="screen-wrapper">
+                    <img src="assets/img/dashboard.png" alt="Dashboard GymDesk">
+                </div>
+            </div>
+            <div class="screen-panel" id="tab-wireframe">
+                <div class="screen-wrapper">
+                    <img src="assets/img/wireframe.png" alt="Wireframes GymDesk">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TECNOLOGIAS -->
+    <section id="tecnologias" class="section-tech reveal">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-eyebrow">Stack Tecnológica</p>
+                <h2 class="section-title">Tecnologias utilizadas</h2>
+                <p class="section-subtitle">Construído com tecnologias Java EE robustas e amplamente utilizadas em
+                    ambiente empresarial.</p>
+            </div>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <div class="tech-icon"><i class="bi bi-cup-hot-fill"></i></div>
+                    <span class="tech-name">JavaEE</span>
+                    <span class="tech-role">Lógica de Negócio</span>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon"><i class="bi bi-hdd-network-fill"></i></div>
+                    <span class="tech-name">Servlets</span>
+                    <span class="tech-role">HTTP Controller</span>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon"><i class="bi bi-window-fullscreen"></i></div>
+                    <span class="tech-name">JSP</span>
+                    <span class="tech-role">Páginas Dinâmicas</span>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon"><i class="bi bi-bootstrap-fill"></i></div>
+                    <span class="tech-name">Bootstrap</span>
+                    <span class="tech-role">UI Responsiva</span>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon"><i class="bi bi-database-fill"></i></div>
+                    <span class="tech-name">MySQL</span>
+                    <span class="tech-role">Base de Dados</span>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon"><i class="bi bi-server"></i></div>
+                    <span class="tech-name">Tomcat</span>
+                    <span class="tech-role">App Server</span>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon"><i class="bi bi-git"></i></div>
+                    <span class="tech-name">Git / GitHub</span>
+                    <span class="tech-role">Controlo de Versões</span>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon"><i class="bi bi-kanban-fill"></i></div>
+                    <span class="tech-name">Agile Scrum</span>
+                    <span class="tech-role">Metodologia</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ESTADO DO PROJETO -->
+    <section class="section-status reveal">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-eyebrow">Progresso</p>
+                <h2 class="section-title">Estado do Projeto</h2>
+            </div>
+            <div class="status-track">
+                <div class="status-step done">
+                    <div class="status-icon"><i class="bi bi-check-lg"></i></div>
+                    <span>Requisitos</span>
+                </div>
+                <div class="status-connector done"></div>
+                <div class="status-step done">
+                    <div class="status-icon"><i class="bi bi-check-lg"></i></div>
+                    <span>Wireframes</span>
+                </div>
+                <div class="status-connector done"></div>
+                <div class="status-step done">
+                    <div class="status-icon"><i class="bi bi-check-lg"></i></div>
+                    <span>Arquitetura</span>
+                </div>
+                <div class="status-connector active"></div>
+                <div class="status-step active">
+                    <div class="status-icon"><i class="bi bi-code-slash"></i></div>
+                    <span>Desenvolvimento</span>
+                </div>
+                <div class="status-connector"></div>
+                <div class="status-step">
+                    <div class="status-icon"><i class="bi bi-bug"></i></div>
+                    <span>Testes</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ARQUITETURA -->
+    <section id="arquitetura" class="section-arch reveal">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-eyebrow">Arquitetura MVC</p>
+                <h2 class="section-title">Estrutura do Sistema</h2>
+                <p class="section-subtitle">Separação clara entre apresentação, lógica de negócio e persistência de
+                    dados.</p>
+            </div>
+            <div class="arch-layers">
+                <div class="arch-user">
+                    <i class="bi bi-person-fill"></i>
+                    <span>Utilizador</span>
+                </div>
+                <div class="arch-arrow"><i class="bi bi-arrow-down"></i></div>
+                <div class="arch-layer layer-view">
+                    <div class="layer-label">View</div>
+                    <h5>Camada de Apresentação</h5>
+                    <p>JSP · Bootstrap · HTML · CSS</p>
+                    <p class="layer-desc">Interface gráfica, navegação e interação com o utilizador</p>
+                </div>
+                <div class="arch-arrow"><i class="bi bi-arrow-down"></i></div>
+                <div class="arch-layer layer-controller">
+                    <div class="layer-label">Controller</div>
+                    <h5>Lógica de Negócio</h5>
+                    <p>JavaEE · Servlets</p>
+                    <p class="layer-desc">Regras de negócio, validação e processamento de pedidos HTTP</p>
+                </div>
+                <div class="arch-arrow"><i class="bi bi-arrow-down"></i></div>
+                <div class="arch-layer layer-model">
+                    <div class="layer-label">Model</div>
+                    <h5>Persistência de Dados</h5>
+                    <p>MySQL</p>
+                    <p class="layer-desc">Reservas, aulas, horários, clientes e funcionários</p>
+                </div>
+                <div class="arch-arrow"><i class="bi bi-arrow-down"></i></div>
+                <div class="arch-layer layer-server">
+                    <div class="layer-label">Server</div>
+                    <h5>Execução</h5>
+                    <p>Apache Tomcat</p>
+                    <p class="layer-desc">Servidor de aplicações Java Web</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="section-cta reveal">
+        <div class="container text-center">
+            <div class="cta-box">
+                <div class="cta-orb"></div>
+                <p class="section-eyebrow">Projeto em Desenvolvimento</p>
+                <h2>Pronto para transformar a gestão do ginásio?</h2>
+                <p>GymDesk foi concebido para simplificar operações e centralizar informação. Desenvolvido no âmbito da
+                    UFCD 5409 — Engenharia de Software.</p>
+                <a href="#screens" class="btn-hero-primary mt-4">
+                    <i class="bi bi-eye-fill me-2"></i>Ver Interface
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <a class="navbar-brand" href="#">
+                        <span class="brand-icon"><i class="bi bi-lightning-charge-fill"></i></span>
+                        GymDesk
+                    </a>
+                    <p class="footer-desc">Sistema de Gestão de Reservas para Ginásios</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="footer-links">
+                        <a href="#funcionalidades">Funcionalidades</a>
+                        <a href="#como-funciona">Como Funciona</a>
+                        <a href="#tecnologias">Tecnologias</a>
+                        <a href="#arquitetura">Arquitetura</a>
+                    </div>
+                </div>
+                <div class="col-md-4 text-end">
+                    <p class="footer-meta">Engenharia de Software · UFCD 5409</p>
+                    <p class="footer-author">João Teixeira · IEFP 2026</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 GymDesk. Projeto Académico · IEFP</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Navbar scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            nav.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Cursor glow
+        document.addEventListener('mousemove', (e) => {
+            const glow = document.getElementById('cursorGlow');
+            glow.style.left = e.clientX + 'px';
+            glow.style.top = e.clientY + 'px';
+        });
+
+        // Reveal on scroll
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // Screen tabs
+        document.querySelectorAll('.screen-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.screen-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.screen-panel').forEach(p => p.classList.remove('active'));
+                tab.classList.add('active');
+                document.getElementById(tab.dataset.target).classList.add('active');
+            });
+        });
+
+        // Animate numbers
+        function animateNum(el, target) {
+            let current = 0;
+            const step = target / 40;
+            const timer = setInterval(() => {
+                current += step;
+                if (current >= target) { current = target; clearInterval(timer); }
+                el.textContent = Math.floor(current);
+            }, 30);
+        }
+
+        const numObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.querySelectorAll('.stat-num').forEach(el => {
+                        animateNum(el, parseInt(el.textContent));
+                    });
+                    numObserver.unobserve(entry.target);
+                }
+            });
+        });
+        document.querySelectorAll('.hero-stats').forEach(el => numObserver.observe(el));
+    </script>
+</body>
+
+</html>
